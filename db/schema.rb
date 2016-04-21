@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20160419025411) do
 
   create_table "artist_aliases", force: :cascade do |t|
     t.integer "artistId",    limit: 4,   default: 0, null: false
@@ -32,15 +32,16 @@ ActiveRecord::Schema.define(version: 0) do
   add_index "artists", ["artistPopularityRecent"], name: "artistPopularityRecent", using: :btree
 
   create_table "genres", force: :cascade do |t|
-    t.integer "level",  limit: 4,   null: false
-    t.string  "name",   limit: 30,  null: false
-    t.string  "songId", limit: 200, null: false
+    t.integer "level",  limit: 4,  null: false
+    t.string  "name",   limit: 30, null: false
+    t.integer "songId", limit: 4
   end
 
   add_index "genres", ["name"], name: "name", using: :btree
   add_index "genres", ["songId"], name: "songId", using: :btree
 
-  create_table "songs", primary_key: "youtubeId", force: :cascade do |t|
+  create_table "songs", force: :cascade do |t|
+    t.string  "youtubeId",     limit: 100, null: false
     t.integer "artistId",      limit: 4,   null: false
     t.string  "songName",      limit: 150
     t.string  "youtubeName",   limit: 350
@@ -66,7 +67,13 @@ ActiveRecord::Schema.define(version: 0) do
   add_index "songs", ["viewCount"], name: "viewCount", using: :btree
   add_index "songs", ["viewCountRate"], name: "viewCountRate", using: :btree
 
-  add_foreign_key "artist_aliases", "artists", column: "artistId", name: "artist_aliases_ibfk_1"
-  add_foreign_key "genres", "songs", column: "songId", primary_key: "youtubeId", name: "genres_ibfk_1"
+  create_table "users", force: :cascade do |t|
+    t.string   "email",           limit: 255, null: false
+    t.string   "password_digest", limit: 255, null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  add_foreign_key "genres", "songs", column: "songId", name: "genres_ibfk_1"
   add_foreign_key "songs", "artists", column: "artistId", name: "songs_ibfk_1"
 end
