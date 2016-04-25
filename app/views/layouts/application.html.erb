@@ -6,18 +6,12 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Material Design fonts -->
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
-  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
-
-  <!-- Material Design for Bootstrap -->
-  <link rel="stylesheet" href="//cdn.rawgit.com/FezVrasta/bootstrap-material-design/dist/dist/bootstrap-material-design.min.css">
-
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
 
 </head>
-<body>
+<body style="font-family: 'Source Sans Pro', sans-serif;">
 
 <nav class="navbar navbar-dark bg-inverse">
   <a class="navbar-brand" href="#">MusicHall</a>
@@ -31,17 +25,19 @@
     <li class="nav-item">
       <a class="nav-link" href="#">About</a>
     </li>
+  </ul>
 
+  <ul class="nav navbar-nav pull-md-right">
     <% if current_user %>
         Logged in as current_user.email
-        <li class="nav-item pull-right">
+        <li class="nav-item">
           <%= link_to 'Log Out', logout_path %>
         </li>
     <% else %>
-        <li class="nav-item pull-right">
+        <li class="nav-item">
           <%= link_to 'Sign Up', signup_path %>
         </li>
-        <li class="nav-item pull-right">
+        <li class="nav-item">
           <%= link_to 'Login', login_path %>
         </li>
     <% end %>
@@ -51,15 +47,6 @@
 </nav>
 
 <%= yield %>
-
-<script src="//code.jquery.com/jquery-2.2.3.min.js"></script>
-<script src="//cdn.rawgit.com/HubSpot/tether/v1.2.0/dist/js/tether.min.js"></script>
-<script src="//cdn.rawgit.com/fezvrasta/bootstrap-material-design/dist/dist/bootstrap-material-design.iife.min.js"></script>
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src=""></script>
-<script>
-  $('body').bootstrapMaterialDesign();
-</script>
 
 </body>
 </html>
