@@ -8,6 +8,13 @@
 /.bundle
 
 # Ignore all logfiles and tempfiles.
-/log/*
-/tmp
-/.idea/*
+log/
+tmp/
+.idea/
+path/
+public/app/
+public/assets/
+vendor/assets/bower_components/
+node_modules/
+typings/
+test/

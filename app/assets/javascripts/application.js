@@ -10,7 +10,18 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
-//= require turbolinks
-//= require_tree .
+//
+//
+//= require es6-shim/es6-shim.min
+//= require systemjs/dist/system-polyfills
+//= require angular2/es6/dev/src/testing/shims_for_IE
+//= require angular2/bundles/angular2-polyfills
+//= require systemjs/dist/system.src
+//= require rxjs/bundles/Rx
+//= require angular2/bundles/angular2.min
+//= require_tree ../../../public/app/
+//
+// Bower packages
+//= require jquery/dist/jquery.min
+//= require tether/dist/js/tether.min
+//= require bootstrap/dist/js/bootstrap
