@@ -10,7 +10,13 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
-//= require angular2-build/angular2.min
+//
+// Bower packages
+//
+//= require jquery/dist/jquery.min
+// require systemjs/build/system.min
+// require angular2-build/angular2
+//= require tether/dist/js/tether.min
+//= require bootstrap/dist/js/bootstrap
+//
 //= require_tree .

@@ -11,3 +11,4 @@
 /log/*
 /tmp
 /.idea/*
+vendor/assets/bower_components

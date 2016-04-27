@@ -1,0 +1,1 @@
+Typescript::Rails::Compiler.default_options = %w(--target ES5 --module system  --noImplicitAny)
