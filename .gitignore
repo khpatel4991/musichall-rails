@@ -17,3 +17,4 @@ public/assets/
 vendor/assets/bower_components/
 node_modules/
 typings/
+test/
