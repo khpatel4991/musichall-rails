@@ -41,12 +41,29 @@
           <%= link_to 'Login', login_path %>
         </li>
     <% end %>
-
-
   </ul>
 </nav>
 
-<%= yield %>
+<script >
+  System.config({
+    packages: {
+      app: {
+        format: 'register',
+        defaultExtension: 'js'
+      }
+    }
+  });
+  System.import('app/main')
+      .then(null, console.error.bind(console));
+</script>
+<my-app>
+  <div class="loading-wrap">
+    <div class="triangle1"></div>
+    <div class="triangle2"></div>
+    <div class="triangle3"></div>
+  </div>
+</my-app>
 
+<%= yield %>
 </body>
 </html>
