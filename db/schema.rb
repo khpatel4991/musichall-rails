@@ -32,17 +32,17 @@ ActiveRecord::Schema.define(version: 20160419025411) do
   add_index "artists", ["artistPopularityRecent"], name: "artistPopularityRecent", using: :btree
 
   create_table "genres", force: :cascade do |t|
-    t.integer "level",  limit: 4,  null: false
-    t.string  "name",   limit: 30, null: false
-    t.integer "songId", limit: 4
+    t.integer "level",   limit: 4,  null: false
+    t.string  "name",    limit: 30, null: false
+    t.integer "song_id", limit: 4
   end
 
   add_index "genres", ["name"], name: "name", using: :btree
-  add_index "genres", ["songId"], name: "songId", using: :btree
+  add_index "genres", ["song_id"], name: "songId", using: :btree
 
   create_table "songs", force: :cascade do |t|
     t.string  "youtubeId",     limit: 100, null: false
-    t.integer "artistId",      limit: 4,   null: false
+    t.integer "artist_id",     limit: 4
     t.string  "songName",      limit: 150
     t.string  "youtubeName",   limit: 350
     t.string  "url",           limit: 255
@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 20160419025411) do
     t.string  "songCountry",   limit: 40,  null: false
   end
 
-  add_index "songs", ["artistId"], name: "artistId", using: :btree
+  add_index "songs", ["artist_id"], name: "artistId", using: :btree
   add_index "songs", ["crawlDelta"], name: "crawlDelta", using: :btree
   add_index "songs", ["songCountry"], name: "songCountry", using: :btree
   add_index "songs", ["songLanguage"], name: "songLanguage", using: :btree
@@ -74,6 +74,6 @@ ActiveRecord::Schema.define(version: 20160419025411) do
     t.datetime "updated_at",                  null: false
   end
 
-  add_foreign_key "genres", "songs", column: "songId", name: "genres_ibfk_1"
-  add_foreign_key "songs", "artists", column: "artistId", name: "songs_ibfk_1"
+  add_foreign_key "genres", "songs", name: "genres_ibfk_1"
+  add_foreign_key "songs", "artists", name: "songs_ibfk_1"
 end
