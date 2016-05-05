@@ -1,5 +1,6 @@
 {
   "name": "musichall_rails",
   "version": false,
-  "dependencies": {}
+  "dependencies": {},
+  "ambientDependencies": {}
 }

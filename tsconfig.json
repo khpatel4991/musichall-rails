@@ -5,12 +5,12 @@
         "moduleResolution": "node",
         "declaration": false,
         "noImplicitAny": false,
-        "removeComments": true,
-        "noLib": false,
+        "removeComments": false,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "sourceMap": true,
-        "outDir": "public/app/"
+        "outDir": "public/app/js",
+        "suppressImplicitAnyIndexErrors": true
     },
     "exclude": [
         "node_modules",
@@ -18,6 +18,5 @@
         "typings/main.d.ts",
         "vendor",
         "app/assets/javascripts"
-    ],
-    "compileOnSave": false
+    ]
 }

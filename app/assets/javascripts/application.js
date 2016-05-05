@@ -13,13 +13,11 @@
 //
 //
 //= require es6-shim/es6-shim.min
-//= require systemjs/dist/system-polyfills
-//= require angular2/es6/dev/src/testing/shims_for_IE
-//= require angular2/bundles/angular2-polyfills
+//= require zone.js/dist/zone
+//= require reflect-metadata/Reflect
 //= require systemjs/dist/system.src
-//= require rxjs/bundles/Rx
-//= require angular2/bundles/angular2.min
-//= require_tree ../../../public/app/
+//= require systemjs.config
+//= require_tree ../../../public/app/js
 //
 // Bower packages
 //= require jquery/dist/jquery.min

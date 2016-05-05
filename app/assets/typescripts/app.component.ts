@@ -1,36 +1,16 @@
-import {Component} from 'angular2/core'
+import {Component} from '@angular/core'
+
+import {SongsComponent} from './songs/songs.component'
 
 @Component({
     selector: 'my-app',
+    directives: [SongsComponent], 
     template: `
-        <div class="row">
-  <div class="col-sm-3 col-sm-offset-2">
-    <div class="card card-block">
-      <h3 class="card-title">Getting Started</h3>
-      <p class="card-text">
-        Customize your music.
-        Select your favourite artist, genre, country/language,
-        we'll give you top songs from each category
-        and with just one click, you can create a youtube playlist
-        and start playing those songs.
-      </p>
-      <a href="#" class="btn btn-primary">Music</a>
-    </div>
-  </div>
+    <h1>Angular Hello</h1>
 
-  <div class="col-md-3 col-md-offset-2">
-    <div class="card card-block">
-      <h3 class="card-title">Save Playlist</h3>
-      <p class="card-text">
-        Save the context that you have created
-        and you'll like play it back when you come back.
-        You need a user account for that.
-        To get yourself an account please contact the administrators.
-      </p>
-      <a href="#" class="btn btn-primary">Contact Me</a>
+    <div>
+        <songs></songs>
     </div>
-  </div>
-</div>
     `
 })
 
