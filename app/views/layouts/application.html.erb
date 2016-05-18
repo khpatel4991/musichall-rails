@@ -3,12 +3,32 @@
 <head>
   <title>MusichallRails</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
+
+
   <%= csrf_meta_tags %>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <script src="https://npmcdn.com/es6-shim@0.35.0/es6-shim.min.js"></script>
+
+  <script src="https://npmcdn.com/zone.js@0.6.12?main=browser"></script>
+  <script src="https://npmcdn.com/reflect-metadata@0.1.3"></script>
+  <script src="https://npmcdn.com/systemjs@0.19.27/dist/system.src.js"></script>
+
+  <%=	 javascript_include_tag 'systemjs.config' %>
+
+  <%#= javascript_include_tag 'application' %>
+
+
+
+
+<!--  &lt;!&ndash; 2. Configure SystemJS &ndash;&gt;
+  <script src="systemjs.config.js"></script>-->
+  <script>
+    System.import('app/main').catch(function(err){ console.error(err); });
+  </script>
 
 </head>
 <body style="font-family: 'Source Sans Pro', sans-serif;">

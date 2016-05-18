@@ -1,22 +1,19 @@
 {
     "compilerOptions": {
         "target": "es5",
-        "module": "system",
+        "module": "commonjs",
         "moduleResolution": "node",
-        "declaration": false,
-        "noImplicitAny": false,
-        "removeComments": false,
+        "sourceMap": true,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
-        "sourceMap": true,
-        "outDir": "public/app/js",
-        "suppressImplicitAnyIndexErrors": true
+        "removeComments": false,
+        "noImplicitAny": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "outDir": "public/app/js"
     },
     "exclude": [
         "node_modules",
         "typings/main",
-        "typings/main.d.ts",
-        "vendor",
-        "app/assets/javascripts"
+        "typings/main.d.ts"
     ]
 }

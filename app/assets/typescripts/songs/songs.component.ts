@@ -6,7 +6,7 @@ import {SongComponent} from "./song.component";
 
 @Component({
     selector: 'songs',
-    templateUrl: 'songs.component.html',
+    templateUrl: 'assets/songs/songs.component.html',
     directives: [SongComponent],
     providers: [SongService]
 })
@@ -17,7 +17,5 @@ export class SongsComponent implements OnInit {
     ngOnInit() {
         this.songService.getSongs()
             .subscribe(songs => this.songs = songs);
-         
-       
      }
 }

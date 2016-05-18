@@ -12,12 +12,12 @@
 //
 //
 //
-//= require es6-shim/es6-shim.min
-//= require zone.js/dist/zone
-//= require reflect-metadata/Reflect
-//= require systemjs/dist/system.src
+// require es6-shim/es6-shim.min
+// require zone.js/dist/zone
+// require reflect-metadata/Reflect
+// require systemjs/dist/system.src
 //= require systemjs.config
-//= require_tree ../../../public/app/js
+// require_tree ../../../public/app/js
 //
 // Bower packages
 //= require jquery/dist/jquery.min
